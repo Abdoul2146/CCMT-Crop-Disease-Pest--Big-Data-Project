@@ -8,14 +8,14 @@ from sklearn.metrics import confusion_matrix
 
 # --- MongoDB connection ---
 username = "ccmt_user"
-password = quote_plus("Abdulhakim50@")
+password = quote_plus("***********") # Replace with actual password
 MONGO_URI = f"mongodb+srv://{username}:{password}@cluster0.o8r6odp.mongodb.net/"
 client = MongoClient(MONGO_URI)
 db = client["ccmt"]
 collection = db["metrics"]
 
 st.title("🌱 CCMT Training Dashboard")
-st.markdown("Visualizing crop disease & pest detection model performance")
+st.markdown("Visualizing crop disease & pest classification model performance")
 
 # --- Fetch experiments ---
 docs = list(collection.find().sort("timestamp", -1))
